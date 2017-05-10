@@ -17,10 +17,15 @@
         
         let accept = document.createElement('input');
         accept.type = 'checkbox';
+        accept.id = "input_label" + nubmerInput;
         accept.classList.add('accept-button');
         accept.addEventListener('change', (event) => {
             toggleComplete(item, accept.checked);
         });
+
+        let labelAccept = document.createElement('label');
+        labelAccept.setAttribute("for", "input_label" + nubmerInput);
+        labelAccept.classList.add('input_label');
         
         let label = document.createElement('div');
         label.classList.add('item-name');
@@ -63,6 +68,7 @@
         
         item.appendChild(accept);
         item.appendChild(label);
+        item.appendChild(labelAccept);
         item.appendChild(edit);
         item.appendChild(deleteButton);
         return item;
@@ -74,10 +80,12 @@
         
         // добавляем дочерний элемент к родительскому
         list.appendChild(newItem)
+        nubmerInput++;
     }
     
     // добавим обработчик на кнопку "добавить"
     buttonAdd.addEventListener('click', addItem);
+    var nubmerInput = 1;
 
     // добавим обработчик на "завершить все"
     document.querySelector('#complete-all').addEventListener('change', (event) => {

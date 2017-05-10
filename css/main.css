@@ -97,10 +97,11 @@ textarea {
 
 
 .todo-wrapper {
-    width: 1000px;
+    width: 300px;
     margin: 50px auto;
+    min-height: 100px;
+    border-radius: 10px;
 }
-
 
 .list-item.completed {
     color: grey;
@@ -116,3 +117,67 @@ textarea {
 .list-item.edit-mode .item-name {
     display: none;
 }
+
+.input-style {
+    border-radius: 10px;
+    margin-bottom: 10px;
+    margin-left: 20px;
+}
+
+#complete-all {
+    margin-left: 20px;
+}
+
+.main-h1 {
+    text-align: center;
+}
+
+.list-item {
+    width: 300px;
+    min-height: 100px;
+    background-color: #dadada;
+    margin-bottom: 20px;
+    overflow-x: hidden;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+}
+
+.delete-item {
+    text-decoration: none;
+    margin-left: 10px;
+}
+
+.item-name {
+    margin-left: 10px;
+}
+
+.accept-button {
+    margin-top: 10px;
+    margin-left: 10px;
+    display: block;
+}
+
+.accept-button {
+    display: none;
+}
+
+.input_label::before {
+    margin-left: 10px;
+    content: '';
+    border: 1px solid grey;
+    display: inline-block;
+    vertical-align: top;
+    right: 5px;
+    height: 23px;
+    width: 23px;
+    background-image: url(../img/checkbox.png);
+    background-repeat: no-repeat;
+    background-position: 0px -99px;
+    cursor: pointer;
+}
+
+.accept-button:checked ~ .input_label::before {
+    background-position: 0px 0px;
+}
+
+
